@@ -2,10 +2,7 @@
 "name": "org node",
 "description":"org node" ,
 "iconName": "me",
-"category": 
-[
+"category": [
     "NPM Config"
-]
-
-
+ ]
 }
