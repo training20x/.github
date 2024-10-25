@@ -1,0 +1,30 @@
+name: org node
+
+on:
+  push: 
+    branches: [ $default-branch ]
+  pull-request:
+    branches: [ $default-branch ]
+
+jobs:
+    build:
+      runs-on: ubuntu-lates
+      steps:
+      - name: Checkout Repo
+        run: actions/checkout@v4
+
+      - name: Setyp Nodejs - 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install Dependecies
+        run: npm install
+
+
+      - name: Unit Testing
+        run: npm test --if-present
+      
+      - name: Code Coverage 
+        run: npm run coverage --if-present
+        
